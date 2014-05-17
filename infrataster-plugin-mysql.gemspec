@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "infrataster-plugin-mysql"
-  spec.version       = '0.1.0'
+  spec.version       = '0.1.1'
   spec.authors       = ["Ryota Arai"]
   spec.email         = ["ryota.arai@gmail.com"]
   spec.summary       = %q{MySQL plugin for Infrataster}
@@ -13,7 +13,7 @@ Gem::Specification.new do |spec|
   spec.test_files    = spec.files.grep(%r{^(test|spec|features)/})
   spec.require_paths = ["lib"]
 
-  spec.add_runtime_dependency "infrataster"
+  spec.add_runtime_dependency "infrataster", "~> 0.1.8"
   spec.add_runtime_dependency "mysql2"
 
   spec.add_development_dependency "bundler", "~> 1.6"
