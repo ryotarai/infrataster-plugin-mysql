@@ -1,4 +1,5 @@
 # infrataster-plugin-mysql
+[![Gem Version](https://badge.fury.io/rb/infrataster-plugin-mysql.png)](http://badge.fury.io/rb/infrataster-plugin-mysql)
 
 MySQL plugin for [Infrataster](https://github.com/ryotarai/infrataster)
 
