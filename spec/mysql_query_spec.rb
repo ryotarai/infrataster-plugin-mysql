@@ -7,5 +7,13 @@ describe server(:db) do
       expect(row['Value'].to_i).to be > 0
     end
   end
+
+  describe mysql_query('SELECT User, Host FROM mysql.user WHERE User=? AND Host=?', 'app', '%') do
+    it 'binds arguments to query' do
+      row = results.first
+      expect(row['User']).to eq 'app'
+      expect(row['Host']).to eq '%'
+    end
+  end
 end
 
