@@ -22,7 +22,7 @@ describe server(:db) do
       row = results.find {|r| r['Variable_name'] == 'Uptime' }
       expect(row['Value'].to_i).to be > 0
 
-      # `results` is a instance of `Mysql2::Result`
+      # `results` is an instance of `Mysql2::Result`
       # See: https://github.com/brianmario/mysql2
     end
   end
