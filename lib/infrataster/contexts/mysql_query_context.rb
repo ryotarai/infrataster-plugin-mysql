@@ -1,5 +1,5 @@
 require 'infrataster'
-require 'mysql2'
+require 'mysql2-cs-bind'
 
 module Infrataster
   module Contexts
@@ -17,7 +17,7 @@ module Infrataster
             username: options[:user],
             password: options[:password],
           )
-          client.query(resource.query)
+          client.xquery(resource.query, *resource.params)
         end
       end
     end
