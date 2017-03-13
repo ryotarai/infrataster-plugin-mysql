@@ -11,12 +11,15 @@ module Infrataster
         end
 
         server.forward_port(options[:port]) do |address, new_port|
-          client = Mysql2::Client.new(
-            host: address,
-            port: new_port,
-            username: options[:user],
-            password: options[:password],
-          )
+          mysql_options = {
+            host: address, port: new_port,
+            username: options[:user], password: options[:password]
+          }
+          if options.key?(:database)
+            mysql_options[:database] = options[:database]
+          end
+          client = Mysql2::Client.new(mysql_options)
+
           client.xquery(resource.query, *resource.params)
         end
       end
