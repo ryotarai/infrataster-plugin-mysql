@@ -1,7 +1,7 @@
 # coding: utf-8
 Gem::Specification.new do |spec|
   spec.name          = "infrataster-plugin-mysql"
-  spec.version       = '0.2.0'
+  spec.version       = '0.2.1'
   spec.authors       = ["Ryota Arai"]
   spec.email         = ["ryota.arai@gmail.com"]
   spec.summary       = %q{MySQL plugin for Infrataster}
