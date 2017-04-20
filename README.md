@@ -29,12 +29,12 @@ describe server(:db) do
 end
 ```
 
-You can specify username and password by options passed to `Infrataster::Server.define`:
+You can specify username, password and database by options passed to `Infrataster::Server.define`:
 
 ```ruby
 Infrataster::Server.define(
   # ...
-  mysql: {user: 'app', password: 'app'}
+  mysql: {user: 'app', password: 'app', database: 'myapp'}
 )
 ```
 

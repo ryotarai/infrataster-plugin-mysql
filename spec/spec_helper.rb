@@ -8,6 +8,13 @@ Infrataster::Server.define(
   mysql: {user: 'app', password: 'app'},
 )
 
+Infrataster::Server.define(
+  :db_database_name,
+  '192.168.44.20',
+  vagrant: true,
+  mysql: {user: 'app', password: 'app', database: 'mysql'},
+)
+
 RSpec.configure do |config|
   config.treat_symbols_as_metadata_keys_with_true_values = true
   config.run_all_when_everything_filtered = true

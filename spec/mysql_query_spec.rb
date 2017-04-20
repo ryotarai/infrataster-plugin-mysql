@@ -17,3 +17,12 @@ describe server(:db) do
   end
 end
 
+describe server(:db_database_name) do
+  describe mysql_query('SELECT User, Host FROM user WHERE User=? AND Host=?', 'app', '%') do
+    it 'binds arguments to query' do
+      row = results.first
+      expect(row['User']).to eq 'app'
+      expect(row['Host']).to eq '%'
+    end
+  end
+end
