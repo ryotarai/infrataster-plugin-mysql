@@ -5,7 +5,7 @@ module Infrataster
     class MysqlQueryResource < BaseResource
       Error = Class.new(StandardError)
 
-      attr_reader :query, :params
+      attr_reader :query, :params, :options
 
       def initialize(query, *args)
         @query = query

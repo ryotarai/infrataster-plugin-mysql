@@ -15,6 +15,16 @@ describe server(:db) do
       expect(row['Host']).to eq '%'
     end
   end
+
+  describe 'changing database name option in mysql_query resource' do
+    describe mysql_query('SELECT User, Host FROM user WHERE User=? AND Host=?', 'app', '%', database: 'mysql') do
+      it 'binds arguments to query' do
+        row = results.first
+        expect(row['User']).to eq 'app'
+        expect(row['Host']).to eq '%'
+      end
+    end
+  end
 end
 
 describe server(:db_database_name) do

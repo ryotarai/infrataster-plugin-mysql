@@ -9,6 +9,7 @@ module Infrataster
         if server.options[:mysql]
           options = options.merge(server.options[:mysql])
         end
+        options = options.merge(resource.options)
 
         server.forward_port(options[:port]) do |address, new_port|
           mysql_options = {
@@ -19,7 +20,6 @@ module Infrataster
             mysql_options[:database] = options[:database]
           end
           client = Mysql2::Client.new(mysql_options)
-
           client.xquery(resource.query, *resource.params)
         end
       end
