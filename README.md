@@ -38,6 +38,20 @@ Infrataster::Server.define(
 )
 ```
 
+These options can also be changed in the `mysql_query` resource:
+
+```ruby
+describe server(:db) do
+  describe mysql_query('SELECT User, Host FROM user WHERE User=? AND Host=?', 'app', '%', database: 'mysql') do
+    it 'binds arguments to query' do
+      row = results.first
+      expect(row['User']).to eq 'app'
+      expect(row['Host']).to eq '%'
+    end
+  end
+end
+```
+
 ## Contributing
 
 1. Fork it ( https://github.com/[my-github-username]/infrataster-plugin-mysql/fork )
